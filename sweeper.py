@@ -4,7 +4,7 @@ from termcolor import colored
 
 # IP Address for the destination
 #target_ip = "192.168.1.1/24"
-target_ip = input(colored("Enter network to sweep (ex. 192.168.1.1/24): ", 'yellow', 'on_red'))
+target_ip = input(colored("Enter Network To Sweep (ex. 192.168.1.1/24): ", 'yellow', 'on_red'))
 
 # create ARP packet
 arp = ARP(pdst=target_ip)
@@ -27,7 +27,7 @@ for sent, received in result:
     clients.append({'ip': received.psrc, 'mac': received.hwsrc})
 
 # print clients
-print(colored("Available devices in the network:", 'yellow'))
+print(colored("Available Devices On The Network:", 'yellow'))
 print("")
 print(colored("IP" + " "*18+"MAC", 'cyan'))
 for client in clients:
